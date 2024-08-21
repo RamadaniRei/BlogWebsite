@@ -4,13 +4,12 @@ const userSlice = createSlice({
   name: "user",
   initialState: {
     isSignedIn: false,
-    useData: null,
+    userData: null,
     searchInput: "tech",
     blogData: null,
   },
-
   reducers: {
-    setsigned: (state, action) => {
+    setSignedIn: (state, action) => {
       state.isSignedIn = action.payload;
     },
     setUserData: (state, action) => {
@@ -25,7 +24,7 @@ const userSlice = createSlice({
   },
 });
 
-export const { setsigned, setUserData, setInput, setBlogData } =
+export const { setSignedIn, setUserData, setInput, setBlogData } =
   userSlice.actions;
 
 export const selectSignedIn = (state) => state.user.isSignedIn;
